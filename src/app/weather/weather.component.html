@@ -1,0 +1,42 @@
+<div class="bgContainer">
+<img  class ="bgImg" src="../assets/images/bg.jpg">
+
+<div class="mainContainer">
+
+    <div class="leftContainer">
+        <h4 class="dateTime text">{{ today }}</h4>
+        <h1 class="temp text">{{this.data!.main.temp}}°</h1>
+        <h2 class="cityName text">{{this.data?.name}}</h2>
+        <h4 class="feelsLike text">Feels Like {{this.data!.main.feels_like}}°</h4>
+        <h4 class="description text">Description: {{ this.data!.weather[0].main}}</h4>
+    </div>
+
+    <div class="rightContainer">
+
+        <!-- <div class="maxMinBox">hello</div> -->
+        <div class="manMinDiv">
+            <div class="min">
+                <h2 class="minTempValue text">{{this.data!.main.temp_min}}°</h2>
+                <h4 class="minTempLabel text">min</h4>
+            </div>
+            <div class="max">
+                <h2 class="maxTempValue text">{{this.data!.main.temp_max}}°</h2>
+                <h4 class="maxTempLabel text">max</h4>
+            </div>
+        </div>
+
+        <div class="humidityWindDiv">
+            <div class="humidity">
+                <h2 class="humidityValue text">{{this.data!.main.humidity}}%</h2>
+                <h4 class="humidityLabel text">humidity</h4>
+            </div>
+            <div class="wind">
+                <h2 class="windValue text">{{this.data!.wind.speed}}km/h</h2>
+                <h4 class="windLabel text">wind</h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
