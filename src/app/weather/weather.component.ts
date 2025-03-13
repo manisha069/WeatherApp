@@ -17,7 +17,7 @@ export class WeatherComponent {
 
   today:any;
   data?: weatherData;
-
+  isLoading : boolean = true;
 
   ngOnInit(){
     
@@ -27,6 +27,10 @@ export class WeatherComponent {
     this.weatherService.getWeather(this.city.cityNameValue).subscribe(response =>{
       console.log("city data", response);
       this.data = response;
+    
+      if(this.data){
+        this.isLoading = false;
+      }
     })
 
   }

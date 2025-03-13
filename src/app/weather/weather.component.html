@@ -3,7 +3,8 @@
 
 <div class="mainContainer">
 
-    <div class="leftContainer">
+    <div *ngIf="isLoading" class = "loader"></div>
+    <div *ngIf="!isLoading" class="leftContainer">
         <h4 class="dateTime text">{{ today }}</h4>
         <h1 class="temp text">{{this.data!.main.temp}}°</h1>
         <h2 class="cityName text">{{this.data?.name}}</h2>
@@ -11,7 +12,7 @@
         <h4 class="description text">Description: {{ this.data!.weather[0].main}}</h4>
     </div>
 
-    <div class="rightContainer">
+    <div *ngIf="!isLoading" class="rightContainer">
 
         <!-- <div class="maxMinBox">hello</div> -->
         <div class="manMinDiv">
